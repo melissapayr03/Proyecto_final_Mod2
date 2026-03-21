@@ -1,7 +1,7 @@
 #Página web
 
 #Summary
-Página web creada como proyecto final del módulo 2.
+Página web clon de Starbucks, creada con la finalidad de ser utilizada como proyecto final del módulo 2.
 
 #Project
 Se hace uso de: 
@@ -13,7 +13,7 @@ Se hace uso de:
 - style.css
 
 #Archivos
-- `index.html`
+- `index_home.html`
 - `README.md` 
 - `style.css` 
 
