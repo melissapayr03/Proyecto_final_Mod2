@@ -1,8 +1,65 @@
-
 body{
+    display: flex;
     margin: 0;
     padding-top: 36px; 
     background-color: #ffffff;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Estilos responsivos según pantalla (celular y desktop) */
+@media (min-width: 480px) {
+    .card{flex-basis: 60%;
+    }
+    summary{
+        display: flex;
+        justify-content: space-between;
+        padding: 8px;
+        font-size: 18.5px;
+        color: rgb(0, 0, 0);
+        list-style: none;
+        cursor: pointer;
+    }
+    summary::after{
+        content: "⌵";
+        font-size: 22px;
+        font-weight: 900;
+    }
+    details[open] summary::after{
+        transform: rotate(180deg);
+    }
+    .foot-desplegable a {
+        margin: 11px;
+    } 
+}
+
+@media (min-width: 1024px) {
+    .card{flex-basis: 40%;
+    }
+
+    summary{
+        font-size: 22px;
+        font-weight: 500;
+        color: rgb(0, 0, 0);
+        pointer-events: none;
+
+    }
+
+    summary::after{
+        display: none;
+    }
+
+    .footer-section{
+        display: flex;
+        justify-content: flex-start;
+        gap: 20;
+        border-left: 50px;
+        padding-left: 70px;
+    }
+
+    .foot-desplegable{
+        flex: -20 1 20px;
+    }
 }
 
 /* HEADER */
@@ -36,10 +93,6 @@ body{
     padding-left: 60px;
 }
 
-
-
-
-
 .navbar{
     /* MENU y REWARDS */
     display: flex;
@@ -57,12 +110,9 @@ body{
     font-family: 'Trispace', sans-serif;
 }
 
-
-
-
-
+/* Localizar tienda */
 .localizar{
-    /* Localizar tienda */
+    margin-right: 40px;
 }
 
 .localizar a{
@@ -73,8 +123,6 @@ body{
     font-size: 18px;
     color: #000000;
     flex-direction: row-reverse;
-
-
 }
 
 .ubi{
@@ -82,38 +130,23 @@ body{
     height: 23px;
 }
 
-.ubi a{
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
+/* Botones */
 .buttons{
-    /* Buttons */
     display: flex;
     gap: 13px;
     padding-right: 60px;
-
+    margin-right: 112px;
 }
 
 .ingresar{
     background-color: #ffffff;
     color: #000000;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 15px;
     font-family: 'Open sans', sans-serif;
-    padding: 5px, 15px, 5px, 15px;
+    padding: 5px 14px;
 
-    /* Forma */
+    /* forma */
     border: 1px solid rgb(255, 255, 255);
     border-radius: 20px;
     border-color: #000000;
@@ -123,16 +156,15 @@ body{
     cursor: pointer;
 }
 
-
 .unete{
     background-color: #000000;
     color: #ffffff;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 15px;
     font-family: 'Open sans', sans-serif;
-    padding: 5px, 15px, 5px, 15px;
+    padding: 5px 14px;
 
-    /* Forma */
+    /* forma */
     border: 1px solid black;
     border-radius: 20px;
     border-color: #000000;
@@ -143,4 +175,346 @@ body{
 }
 
 
+/* MAIN CONTENT */
 
+.info{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Padauk', sans-serif;
+    word-spacing: -3px;
+}
+
+h2{
+    word-spacing: -6px;
+}
+
+@media (min-width: 480px) {
+    .card{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card img{
+        display: block;
+        width: 100%;
+    }
+
+    .info{
+        flex-direction: column; 
+        font-size: 20px;
+        padding: 30px 20px; 
+    }
+
+    .seis,
+    .siete{
+        font-size: 21px;
+    }
+
+    .card h2{
+        font-weight: 900;
+        margin-bottom: 11px;
+        margin-top: 1px;
+    }
+}
+
+
+@media (min-width: 1024px) {
+    .card{
+        display: flex;
+        flex-direction: row;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    
+    .card img{
+        display: block;
+    }
+    
+    .info{
+        flex-direction: column;
+        height: 100%;
+        padding: 52px;
+    } 
+
+    .info, 
+    .card img{ 
+        width: 50%; 
+    }
+    
+    #dos-todo{
+        flex-direction: row-reverse; 
+    }
+    
+    #cuatro-todo{
+        flex-direction: row-reverse;  
+    }
+    
+
+    #seis-todo img{
+        width: 100%;
+    }
+    
+    #siete-todo img{
+        width: 100%;
+    }
+
+    #seis-todo{
+        flex-direction: column;  
+        align-items: center;
+        
+    }
+    
+    #siete-todo{        
+        flex-direction: column;  
+        align-items: center;
+    }
+
+    .juntar{
+        display: flex;
+        gap: 20px;
+        padding: 0px 20px;
+        align-items: stretch;
+        margin-bottom: 10px;
+
+        width: 118%;
+    }
+    .juntar .card{
+        display: flex;
+        align-items: stretch;
+        width: 50%;
+        margin: 0;
+    }
+}
+
+/* colores para cada texto y edición de los botones */
+#uno-todo{
+    color: #028058; 
+    background-image: url(blanco.png);
+    padding: 5px;   
+    margin-bottom: 20px;
+}
+
+#dos-todo{
+    color: #4a5142;
+    background-image: url(cafe.png);
+    padding: 5px; 
+    margin-bottom: 20px;
+}
+
+#tres-todo{
+    color: #c9c28e;
+    background-image: url(verde.png);
+    padding: 5px; 
+    margin-bottom: 20px;
+}
+
+#cuatro-todo{
+    color: #e3deafd7;
+    background-image: url(gris.png);
+    padding: 5px; 
+    margin-bottom: 20px;
+}
+
+#cinco-todo{
+    color: #c9c5a5e7;
+    background-image: url(verde.png);
+    padding: 5px; 
+    margin-bottom: 20px;
+}
+
+#seis-todo{
+    color: #c9c28ee7;
+    background-image: url(verde.png);
+    padding: 5px; 
+    margin-bottom: 20px;
+}
+
+#siete-todo{
+    color: #1b332b;
+    background-image: url(blanco.png);
+    padding: 5px; 
+    margin-bottom: 20px;
+}
+
+.descubre,
+.aqui,
+.ver{
+    background-color: #00000000;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15.5px;
+    width: 128px;
+    height: 31px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 20px;
+}
+
+.descubre{
+    color: #028058;    
+    border: 1px solid #028058;
+}
+
+.aqui{
+    color: #c9c28ee7;    
+    border: 1px solid #c9c28ee7;
+}
+
+.ver{
+    color: #1b332b;    
+    border: 1px solid #1b332b;
+}
+
+.card button{
+    cursor: pointer;
+}
+
+
+/* FOOTER */
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    font-family: 'Padauk', sans-serif;
+    text-decoration: none;
+
+    z-index: 1000;
+    width: 100%;
+    height: 600px;
+    margin-top: 0;
+    box-sizing: border-box;
+
+    /* efecto de borde difuso para el encabezado */
+    backdrop-filter: blur(25px); 
+    border-top: 1px solid #78716457;
+
+    box-shadow: 0px 1px 7px rgba(68, 65, 60, 0.245);
+    position: -webkit-sticky; 
+
+    padding: 20px 40px; 
+}
+
+.footer a{
+    display: flex;
+    text-decoration: none;
+}
+
+.footer-section {
+    order:1;
+}
+
+.footer-section a{
+    color: #646464db;
+    font-size: 18px;
+    font-weight: 500;  
+
+
+    display: block;
+    padding: 5px 0;
+}
+
+.nosotros a:hover{
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+}
+ 
+.cliente a:hover{
+    cursor: pointer;
+    color: black;
+}
+
+/* final: redes y derechos */
+.final{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 100;
+    order: 2;
+
+    /* borde */
+    border-top: 1px solid #f0f0f0fb;
+    padding-top: 15px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.redes{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 45px;
+    gap: 27px;
+}
+
+.redes a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: ease;
+}
+
+.redes img{
+    width: 33px;
+    height: 33px;
+    object-fit: contain;
+}
+
+.redes a:hover {
+    transform: scale(1.2);
+}
+
+.footer-1{
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+    margin-bottom: 11px;
+}
+
+.footer-1 a{
+    color: #afafaf;
+    font-weight: lighter;
+    font-size: 16px;
+    margin-left: 9px;
+}
+
+.preferencias{
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+}
+
+.preferencias a{
+    color: #afafaf;
+    font-weight: lighter;
+    font-size: 16px;
+    margin-bottom: 18px;
+} 
+
+.footer-1 a:hover{
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.479);
+}
+
+.preferencias a:hover{
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.479);
+}
+
+.derechos{
+    display: flex;
+    text-align: center;
+    color: #afafaf;
+    flex-direction: column;   
+}
+
+.derechos h1{
+    font-weight: lighter;
+    font-size: 14.5px;
+    margin-bottom: -6px;
+}
+
+.derechos h2{
+    font-weight: lighter;
+    font-size: 10.5px;
+}
